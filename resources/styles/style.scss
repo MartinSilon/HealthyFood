@@ -1,0 +1,133 @@
+a{
+  color: black;
+  text-decoration: none;
+}
+.big{
+  font-size: 5em;
+}
+.smaller{
+  font-size: 3.5em;
+}
+.smallerer{
+  font-size: 2.5em;
+}
+
+.pass{
+  background-color: white;
+  label{
+    color: black;
+  }
+  input{
+    border: 2px solid black;
+    border-radius: 0.375em;
+  }
+  .submit{
+    background-color: black;
+    color: white;
+  }
+}
+
+.lobby{
+  .done_class{
+    background-color: greenyellow;
+  }
+  .container{
+    max-width: 98.4%;
+    .one{
+      background-color: white;
+      border: 2px solid black;
+    }
+    .two{
+      background-color: white;
+      border: 2px solid black;
+    }
+    .three{
+      background-color: white;
+      border: 2px solid black;
+    }
+    .four{
+      background-color: white;
+      border: 2px solid black;
+    }
+  }
+}
+
+.navbar{
+  border-bottom: 2px solid black;
+  .menu-items{
+    ul{
+      text-decoration: none;
+      list-style: none;
+
+    }
+  }
+}
+.pridanie{
+  .container{
+    max-width: 100%;
+  }
+  .row{
+    display: flex;
+    border: 2px solid black;
+    .col-12{
+      p{
+        font-size: 5em;
+      }
+
+    }
+
+  }
+}
+
+
+.zaznamy{
+  table{
+    tr:nth-child(odd) {
+      background: darkseagreen;
+    }
+    tr:nth-child(even) {
+      background: darkcyan;
+    }
+    .trMain{
+      color: black;
+      font-size: 1.2em;
+    }
+  }
+
+}
+
+.pridanieItem{
+  .item{
+    border: 2px solid black;
+  }
+  label{
+    color: black;
+  }
+  input{
+    border: 2px solid black;
+    border-radius: 0.375em;
+  }
+  .submit{
+    background-color: black;
+    color: white;
+  }
+}
+
+@media(max-width: 991.98px) {
+  .pass{
+    background-color: white;
+
+    label{
+      color: black;
+      font-size: 5em;
+    }
+    input{
+      border: 2px solid black;
+      border-radius: 0.375em;
+    }
+    .submit{
+      background-color: black;
+      color: white;
+    }
+  }
+}
