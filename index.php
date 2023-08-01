@@ -10,6 +10,7 @@ $suma_bielkoviny = 0;
 $suma_sacharidy = 0;
 $suma_voda = 0;
 
+//Pridanie CSS na splnené polia
 function done_b($x, $y) {
     if ($x >= $y) {
         echo "done_class";
@@ -23,7 +24,7 @@ function done_b($x, $y) {
     <div class="container h-100 p-0 m-0">
         <div class="row h-50">
             <div class="one col-lg-6 col-sm-12 text-center d-flex align-items-center justify-content-center p-0">
-                <a class="w-100" href="page_zaznamy.php">
+                <a class="w-100" href="page_pridanie_jedlo.php">
                     <?php
                     $sql = "SELECT bielkoviny
                                 FROM jedla
@@ -47,7 +48,7 @@ function done_b($x, $y) {
                 </a>
             </div>
             <div class="two col-lg-6 col-sm-12 text-center d-flex align-items-center justify-content-center p-0">
-                <a class="w-100" href="page_zaznamy.php">
+                <a class="w-100" href="page_pridanie_jedlo.php">
                     <?php
                     $sql = "SELECT sacharidy FROM jedla JOIN druh ON jedla.druh = druh.id
                                 WHERE druh.druh = 'jedlo' AND jedla.datum = '$datum'";
@@ -70,7 +71,7 @@ function done_b($x, $y) {
         </div>
         <div class="row h-50">
             <div class="three col-lg-6 col-sm-12 text-center d-flex align-items-center justify-content-center p-0">
-                <a class="w-100" href="page_zaznamy.php">
+                <a class="w-100" href="page_pridanie_voda.php">
                     <?php
                     $sql = "SELECT jedla.objem, druh.druh
                                 FROM jedla
