@@ -19,7 +19,7 @@ if (isset($_POST['pass'])) {
 
     if ($password === $correct_password) {
         $_SESSION['login'] = 1;
-        header("Location: ../lobby.php");
+        header("Location: ../index.php");
     } else {
         header("Location: ../page_login.php?error=Zle heslo.");
         exit();

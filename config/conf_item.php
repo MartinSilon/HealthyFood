@@ -32,7 +32,7 @@ if($druh == "napoj"){
             ) LIMIT 1";
 
      mysqli_query($conn, $sql);
-    header("Location: ../lobby.php");
+    header("Location: ../index.php");
 }
 else{
  $sql = "INSERT INTO jedla (nazov, kalorie, bielkoviny, sacharidy, druh, datum)
@@ -48,7 +48,7 @@ else{
          ) LIMIT 1";;
 
  mysqli_query($conn, $sql);
- header("Location: ../lobby.php");
+ header("Location: ../index.php");
 }
 
 

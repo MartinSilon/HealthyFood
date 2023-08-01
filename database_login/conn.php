@@ -23,6 +23,19 @@ $sql_createTable = "
     ";
 mysqli_query($conn, $sql_createTable);
 
+$sql_createTable = "
+        CREATE TABLE IF NOT EXISTS udaje (
+            id INT AUTO_INCREMENT,
+            max_kalorie SMALLINT,
+            max_bielkoviny SMALLINT,
+            max_sacharidy SMALLINT,
+            max_voda TINYINT,
+            cas_vytvorenia TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            PRIMARY KEY (id)
+        );
+    ";
+mysqli_query($conn, $sql_createTable);
+
 $sql_insertData = "
         INSERT INTO druh (id, druh) 
             SELECT * FROM (SELECT '1', 'jedlo') AS tmp

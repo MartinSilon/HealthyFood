@@ -4,15 +4,7 @@ session_start();
 require 'database_login/conn.php';
 require 'head.php';
 require 'nav.php';
-
-$max_bielkoviny = 0;
-$max_sacharidy = 0;
-$max_voda = 0;
-
-$max_bielkoviny = $_SESSION['max_bielkoviny'];
-$max_sacharidy = $_SESSION['max_sacharidy'];
-$max_voda = $_SESSION['max_voda'];
-$max_kalorie = $_SESSION['max_kalorie'];
+require 'database_login/select.php';
 
 $suma_bielkoviny = 0;
 $suma_sacharidy = 0;

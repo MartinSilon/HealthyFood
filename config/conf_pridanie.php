@@ -29,6 +29,7 @@ $sql_createTable = "
 mysqli_query($conn, $sql_createTable);
 
 
+
 if (isset($_POST['name']) && isset($_POST['protein']) && isset($_POST['sacharidy'])) {
     $nazov = validate($_POST['name']);
     $kalorie = validate($_POST['kcal']);
@@ -41,7 +42,7 @@ if (isset($_POST['name']) && isset($_POST['protein']) && isset($_POST['sacharidy
             ('$nazov','$kalorie' ,'$bielkoviny', '$sacharidy', '$datum', '1');
         ";
     mysqli_query($conn, $sql_insertData);
-    header("Location: ../lobby.php");
+    header("Location: ../index.php");
 
 } else {
     if (isset($_POST['name_voda']) && isset($_POST['objem']) && $_POST['objem']!="" && $_POST['name_voda']!="") {
@@ -54,7 +55,7 @@ if (isset($_POST['name']) && isset($_POST['protein']) && isset($_POST['sacharidy
             ('$nazov','$objem', '$datum','2');
         ";
         mysqli_query($conn, $sql_insertData);
-        header("Location: ../lobby.php");
+        header("Location: ../index.php");
     }else{
         header("Location: ../page_pridanie_voda.php?Chyba");
     }
