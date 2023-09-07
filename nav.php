@@ -5,7 +5,7 @@
                 <a class="smallerer" href="index.php"><li>LOBBY</li></a>
                 <a class="smallerer" href="page_zaznamy.php"><li>ZÁZNAMY</li></a>
                 <a class="smallerer" href="page_pridanie.php"><li>PRIDAŤ</li></a>
-                <a class="smallerer" href="page_nastavenia.php"><li>NASTAVENIA</li></a>
+                <a class="smallerer" href="config/presmerovanie.php"><li>NASTAVENIA</li></a>
             </ul>
         </div>
     </div>

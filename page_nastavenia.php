@@ -1,9 +1,12 @@
 <?php
 session_start();
-
 require 'database_login/conn.php';
 require 'head.php';
 require 'nav.php';
+
+// --->     Overovanie EMAILU z DB a preloženie na ID    <---
+require 'config/email_check.php';
+
 require  'database_login/select.php';
 
 
@@ -14,21 +17,33 @@ if(isset($_POST['max_kalorie']) || isset($_POST['max_sacharidy']) ||  isset($_PO
     $max_voda = $_POST['max_voda'];
 
 
+    $sql = "SELECT id_uzivatela FROM udaje JOIN uzivatelia ON udaje.id_uzivatela = uzivatelia.id WHERE uzivatelia.id = $id_uzivatela";  //Ak neexistuje záznam tak sa insertnú nové dáta
+    $result = $conn->query($sql);
+    if ($result->num_rows == 0) {   //Ak dáta už existujú tak sa budu len upravovať, aby sa nezahlcovala DATABAZA
+        //INSERT do ÚDAJE
+        $sql_insertData = "
+            INSERT INTO udaje (id_uzivatela, max_kalorie, max_bielkoviny, max_sacharidy, max_voda) 
+                VALUES
+                ('$id_uzivatela','1200','100' ,'120', '2.5');
+        ";
+        mysqli_query($conn, $sql_insertData);
+    }
+
     $sql_updateData = "
     UPDATE udaje
+        JOIN uzivatelia ON udaje.id_uzivatela = uzivatelia.id
         SET 
             max_kalorie = '$max_kalorie',
             max_bielkoviny = '$max_bielkoviny',
             max_sacharidy = '$max_sacharidy',
             max_voda = '$max_voda'
-        WHERE 
-            id = 1;
+        WHERE uzivatelia.id = '$id_uzivatela'
         ";
     mysqli_query($conn, $sql_updateData);
-    header("Location: index.php");
-}else {
 
+    header("Location: index.php?email=$email");
 }
+
 ?>
 <html>
 <body>

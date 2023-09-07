@@ -2,6 +2,8 @@
 require 'database_login/conn.php';
 require 'head.php';
 require 'nav.php';
+// --->     Overovanie EMAILU z DB a preloženie na ID    <---
+require 'config/email_check.php';
 ?>
 <html>
 <body>
@@ -28,7 +30,7 @@ require 'nav.php';
                 $sql = "SELECT jedla.nazov, COUNT(*) AS pocet_opakovani
                             FROM jedla
                             JOIN druh ON jedla.druh = druh.id
-                            WHERE druh.druh = 'jedlo'
+                            WHERE druh.druh = 'jedlo' AND jedla.id_uzivatela = '$id_uzivatela'
                             GROUP BY jedla.nazov
                             ORDER BY pocet_opakovani DESC
                             LIMIT 4;";

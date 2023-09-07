@@ -10,23 +10,7 @@ function validate($data)
     return $data;
 }
 
-//CREATE TABLE
-$sql_createTable = "
-        CREATE TABLE IF NOT EXISTS jedla (
-            id INT AUTO_INCREMENT,
-            nazov VARCHAR(15),
-            kalorie SMALLINT,
-            bielkoviny TINYINT,
-            sacharidy TINYINT,
-            objem DECIMAL(3,2),
-            druh TINYINT(1),
-            datum DATE,
-            cas_vytvorenia TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-            PRIMARY KEY (id)
-        );
-        
-    ";
-mysqli_query($conn, $sql_createTable);
+
 
 
 
